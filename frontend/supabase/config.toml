@@ -1,0 +1,4 @@
+project_id = "eofynxgsleviyssoqwpv"
+
+[functions.bitrix-crm]
+verify_jwt = false
