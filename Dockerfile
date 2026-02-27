@@ -34,6 +34,6 @@ COPY --from=build /app/frontend/dist /usr/share/nginx/html
 # Copy custom nginx config from the root
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
