@@ -7,8 +7,8 @@ WORKDIR /app/frontend
 COPY frontend/package.json ./
 COPY frontend/package-lock.json* ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies using npm ci for deterministic and faster builds
+RUN npm ci --loglevel error --no-audit
 
 # Copy all frontend files
 COPY frontend/ ./
@@ -18,6 +18,9 @@ ARG VITE_SUPABASE_URL
 ARG VITE_SUPABASE_PUBLISHABLE_KEY
 ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL
 ENV VITE_SUPABASE_PUBLISHABLE_KEY=$VITE_SUPABASE_PUBLISHABLE_KEY
+
+# Set node options to limit memory if needed
+ENV NODE_OPTIONS="--max-old-space-size=1536"
 
 # Build the application
 RUN npm run build
