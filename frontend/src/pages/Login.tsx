@@ -60,7 +60,7 @@ const Login = () => {
             <PlaneTakeoff className="w-10 h-10 text-primary animate-bounce-slow" />
           </div>
           <h1 className="text-4xl font-black tracking-tighter text-white">
-            EXPATUR <span className="text-primary">METRICS</span>
+            EXPATUR <span className="text-primary">Metrics</span>
           </h1>
           <p className="text-muted-foreground font-medium text-sm">Dashboard</p>
         </div>
